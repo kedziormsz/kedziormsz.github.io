@@ -1,17 +1,27 @@
+:root {
+  --malachite: #00FF41;
+}
+
 body {
   background: #0D0208;
-  color: #00FF41;
-  display: inline-block;
+  color: var(--malachite);
   font: bold 16px 'Courier New', Courier, monospace;
+}
+
+.typewriter {
+  width: fit-content;
 }
 
 .typewriter p {
   overflow: hidden;
-  border-right: .7em solid #00FF41;
+  border-right: .7em solid var(--malachite);
   white-space: nowrap;
-  animation: 
-    typing 1s steps(30, end),
+  animation:
+    typing 1s steps(30, end) forwards,
     blink-caret .66s step-end infinite;
+  margin-right: -.7em;
+  animation-delay: 2s, 0s;
+  width: 0;
 }
 
 @keyframes typing {
@@ -21,10 +31,18 @@ body {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #00FF41 }
+  50% { border-color: var(--malachite) }
 }
 
 .fa {
+  opacity: 0;
   font-size: 36px;
-  color:#00FF41;
+  color:var(--malachite);
+  animation: fadeIn 2s forwards;
+  animation-delay: 4s;
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+} 
